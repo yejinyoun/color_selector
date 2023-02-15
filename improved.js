@@ -10,6 +10,7 @@ function init() {
 
 function showColor() {
   let colorcode = getColorCode();
+  console.log(colorcode);
   // storing colorcode as object
 
   showColorBox(colorcode);
