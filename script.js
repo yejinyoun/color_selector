@@ -4,7 +4,9 @@ window.addEventListener("DOMContentLoaded", init);
 //init function executes when DOMContentLoaded
 
 let picker;
-let pickedColor;
+let hex;
+let rgb;
+let hsl;
 
 function init() {
   //detects when the color is selected and executes all the function
@@ -17,11 +19,17 @@ function init() {
   displayColorCode();
 }
 
-function currentColor() {
-  pickedColor = picker.value;
-  console.log(pickedColor);
-  function readHEX() {}
-  function HEXtoRGB() {}
+function currentColor(picked) {
+  picked = picker.value;
+
+  setHEX(picked);
+  HEXtoRGB(hex);
+
+  function setHEX(pickedColor) {
+    hex = pickedColor;
+    console.log(`hex code is _${hex}_`);
+  }
+  function HEXtoRGB(pickedColor) {}
   function RGBtoHEX() {}
 }
 
