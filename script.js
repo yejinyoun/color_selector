@@ -18,6 +18,8 @@ function init() {
 }
 
 function currentColor(picked) {
+  // set value to hex, rgb, hsl
+
   picked = picker.value;
 
   let r;
@@ -93,10 +95,12 @@ function currentColor(picked) {
 }
 
 function displayColor() {
+  // change backgroundcolor to selected coler
   document.querySelector("#color").style.backgroundColor = `${hex}`;
 }
 
 function displayColorCode() {
+  // show the color code - hex, rgb, hsl
   document.querySelector("#hexcode").textContent = hex;
   document.querySelector("#rgbcode").textContent = rgb;
   document.querySelector("#hslcode").textContent = hsl;
