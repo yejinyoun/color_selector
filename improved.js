@@ -5,27 +5,33 @@ window.addEventListener("DOMContentLoaded", init);
 
 function init() {
   document.querySelector("input").addEventListener("input", showColor);
+  // when the color is selected, execute the showColor function
 }
 
 function showColor() {
   let colorcode = getColorCode();
-  console.log(colorcode);
+  // storing colorcode as object
+
   showColorBox(colorcode);
   showColorCode(colorcode);
+  // executing view functions w model (colorcode)
 
-  function showColorBox(csscode) {
+  function showColorBox(codeset) {
     // change backgroundcolor to selected color
-    document.querySelector("#color").style.backgroundColor = csscode.css;
+    document.querySelector("#color").style.backgroundColor = codeset.css;
   }
-  function showColorCode(colorcode) {
-    let hexcode = colorcode.hex;
-    let rgbcode = colorcode.rgb;
-    let hslcode = colorcode.hsl;
+  function showColorCode(codeset) {
+    // display color code
+
+    let hexcode = codeset.hex;
+    let rgbcode = codeset.rgb;
+    let hslcode = codeset.hsl;
 
     showHEX(hexcode);
     showRGB(rgbcode);
     showHSL(hslcode);
 
+    // display each color code - putting each colorcode into display format
     function showHEX(code) {
       document.querySelector("#hexcode").textContent = code;
     }
