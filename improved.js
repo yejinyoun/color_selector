@@ -11,15 +11,30 @@ function showColor() {
   let colorcode = getColorCode();
   console.log(colorcode);
   showColorBox(colorcode);
+  showColorCode(colorcode);
 
   function showColorBox(csscode) {
     // change backgroundcolor to selected color
     document.querySelector("#color").style.backgroundColor = csscode.css;
   }
   function showColorCode(colorcode) {
-    function showHEX(hexcode) {}
-    function showRGB(rgbcode) {}
-    function showHSL(hslcode) {}
+    let hexcode = colorcode.hex;
+    let rgbcode = colorcode.rgb;
+    let hslcode = colorcode.hsl;
+
+    showHEX(hexcode);
+    showRGB(rgbcode);
+    showHSL(hslcode);
+
+    function showHEX(code) {
+      document.querySelector("#hexcode").textContent = code;
+    }
+    function showRGB(code) {
+      document.querySelector("#rgbcode").textContent = `${code.r}, ${code.g}, ${code.b}`;
+    }
+    function showHSL(code) {
+      document.querySelector("#hslcode").textContent = `${code.h}, ${code.s}%, ${code.l}%`;
+    }
   }
   function getColorCode() {
     // returns colorcode(object) including each property (hex,rgb,hsl,css)
