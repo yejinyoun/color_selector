@@ -10,14 +10,19 @@ function init() {
 function showColor() {
   let colorcode = getColorCode();
   console.log(colorcode);
+  showColorBox(colorcode);
 
-  function showColorBox(csscode) {}
+  function showColorBox(csscode) {
+    // change backgroundcolor to selected color
+    document.querySelector("#color").style.backgroundColor = csscode.css;
+  }
   function showColorCode(colorcode) {
     function showHEX(hexcode) {}
     function showRGB(rgbcode) {}
     function showHSL(hslcode) {}
   }
   function getColorCode() {
+    // returns colorcode(object) including each property (hex,rgb,hsl,css)
     let hex = getHEX();
     let rgb = hexToRGB(hex);
     let hsl = rgbToHSL(rgb.r, rgb.b, rgb.b);
